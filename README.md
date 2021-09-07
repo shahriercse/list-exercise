@@ -8,8 +8,10 @@ I started this project after learning MERN stack a bit. And this can be take as 
 
 ### Basic Features
 
-    - An user can create their exercise list with given their exercise name and duration of the exercise.
-    - They can archive their exercise list, which is add on the archive page. And also they can unarchive this list.
+    - An user can create their exercise list with
+      given their exercise name and duration of the exercise.
+    - They can archive their exercise list, which is add on the archive page.
+    - And also they can unarchive this list.
     - They can edit their exercise list.
 
 So, I performed the complete CRUD operations in this project.
