@@ -2,11 +2,11 @@ import { Link } from 'react-router-dom';
 
 export default function Navbar() {
   return (
-    <header className="px-4 py-3 bg-tomato">
+    <header className="px-4 py-3 bg-dark">
       <div className="container mx-auto">
         <div className="flex items-center justify-between">
-          <Link className="text-xl font-bold" to="/">
-            Exercise
+          <Link className="text-xl font-bold text-white" to="/">
+            Exercise Point
           </Link>
           <nav>
             <ul className="flex items-center space-x-5 text-lg font-semibold text-gray-100">

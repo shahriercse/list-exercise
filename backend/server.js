@@ -1,9 +1,19 @@
 const dotenv = require('dotenv');
 const mongoose = require('mongoose');
+const express = require('express');
+const path = require('path');
 
 dotenv.config({ path: './config.env' });
 
 const app = require('./app');
+
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static('../frontend/build'));
+
+  app.get('*', (req, res) => {
+    res.sendFile(path.resolve(__dirname, '../frontend', 'build', 'index.html'));
+  });
+}
 
 const DB = process.env.DATABASE_URL;
 
