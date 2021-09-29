@@ -31,6 +31,12 @@ app.use(express.urlencoded({ extended: true }));
 app.use('/api/exercise', exerciseRouter);
 app.use('/api/users', userRouter);
 
+app.get('/', (req, res) => {
+  res.json({
+    message: 'Hello from the server!',
+  });
+});
+
 // SHOWING AN ERROR - IF REQUEST FROM UNKNOWN ROUTES
 app.all('*', (req, res, next) => {
   next(new AppError(`Can't find ${req.originalUrl} to this server!`, 404));
