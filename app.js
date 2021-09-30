@@ -11,7 +11,7 @@ const AppError = require('./utils/appError');
 
 const app = express();
 
-if (process.env.NODE_ENV === 'development') {
+if (process.env.NODE_ENV !== 'production') {
   app.use(morgan('dev')); // This is for logger
 }
 
@@ -31,17 +31,11 @@ if (process.env.NODE_ENV === 'production') {
   });
 }
 
-// app.get('/', (req, res) => {
-//   res.json({
-//     message: 'Hello from the server!',
-//   });
+// SHOWING AN ERROR - IF REQUEST FROM UNKNOWN ROUTES
+// app.all('*', (req, res, next) => {
+//   next(new AppError(`Can't find ${req.originalUrl} to this server!`, 404));
 // });
 
-// SHOWING AN ERROR - IF REQUEST FROM UNKNOWN ROUTES
-app.all('*', (req, res, next) => {
-  next(new AppError(`Can't find ${req.originalUrl} to this server!`, 404));
-});
-
-app.use(globalErrorHandler);
+// app.use(globalErrorHandler);
 
 module.exports = app;
