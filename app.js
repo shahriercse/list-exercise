@@ -31,11 +31,11 @@ if (process.env.NODE_ENV === 'production') {
 app.use('/api/exercise', exerciseRouter);
 app.use('/api/users', userRouter);
 
-app.get('/', (req, res) => {
-  res.json({
-    message: 'Hello from the server!',
-  });
-});
+// app.get('/', (req, res) => {
+//   res.json({
+//     message: 'Hello from the server!',
+//   });
+// });
 
 // SHOWING AN ERROR - IF REQUEST FROM UNKNOWN ROUTES
 app.all('*', (req, res, next) => {
