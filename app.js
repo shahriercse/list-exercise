@@ -20,6 +20,9 @@ app.use(cors());
 app.use(express.json({ limit: '10kb' }));
 app.use(express.urlencoded({ extended: true }));
 
+app.use('/api/exercise', exerciseRouter);
+app.use('/api/users', userRouter);
+
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static('frontend/build'));
 
@@ -27,9 +30,6 @@ if (process.env.NODE_ENV === 'production') {
     res.sendFile(path.resolve(__dirname, 'frontend', 'build', 'index.html'));
   });
 }
-
-app.use('/api/exercise', exerciseRouter);
-app.use('/api/users', userRouter);
 
 // app.get('/', (req, res) => {
 //   res.json({
