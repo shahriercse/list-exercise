@@ -32,10 +32,10 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 // SHOWING AN ERROR - IF REQUEST FROM UNKNOWN ROUTES
-app.all('*', (req, res, next) => {
-  next(new AppError(`Can't find ${req.originalUrl} to this server!`, 404));
-});
+// app.all('*', (req, res, next) => {
+//   next(new AppError(`Can't find ${req.originalUrl} to this server!`, 404));
+// });
 
-app.use(globalErrorHandler);
+// app.use(globalErrorHandler);
 
 module.exports = app;
